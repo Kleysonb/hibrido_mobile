@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Cursos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="cards-bg">
+
+      <ion-card *ngFor="let item of noticias">
+
+            <img [src]=item.img/>
+
+            <ion-card-content>
+              <ion-card-title>
+                {{ item.titulo }}
+              </ion-card-title>
+              <p>
+                {{ item.conteudo}}
+              </p>
+            </ion-card-content>
+
+            <ion-row no-padding>
+              <ion-col text-right>
+                <button ion-button clear small color="danger" icon-left [navPush]="pushPage" [navParams]="{item: item}">
+                  <ion-icon name='md-arrow-forward'></ion-icon>
+                  Saiba Mais
+                </button>
+              </ion-col>
+            </ion-row>
+
+        </ion-card>
+
+</ion-content>
