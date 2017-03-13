@@ -2,13 +2,11 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    ProgressBarComponent
+    HomePage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -16,8 +14,7 @@ import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    ProgressBarComponent
+    HomePage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

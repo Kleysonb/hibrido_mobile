@@ -7,6 +7,8 @@ import { ConteudoPage } from '../pages/conteudo/conteudo';
 import { GerenciadoConteudo} from '../providers/gerenciado-conteudo';
 import { AddCursoPage } from '../pages/add-curso/add-curso';
 import { DeletePage } from '../pages/delete/delete';
+import { LoginPage } from '../pages/login/login';
+import { Fire } from '../util/fire';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,8 @@ import { DeletePage } from '../pages/delete/delete';
     Page1,
     ConteudoPage,
     AddCursoPage,
-    DeletePage
+    DeletePage,
+    LoginPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -25,8 +28,9 @@ import { DeletePage } from '../pages/delete/delete';
     Page1,
     DeletePage,
     ConteudoPage,
-    AddCursoPage
+    AddCursoPage,
+    LoginPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, GerenciadoConteudo]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, GerenciadoConteudo, Fire]
 })
 export class AppModule {}

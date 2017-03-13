@@ -1,10 +1,12 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform, ionicBootstrap } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
+import { LoginPage } from '../pages/login/login';
 import { Page1 } from '../pages/page1/page1';
 import { AddCursoPage } from '../pages/add-curso/add-curso';
 import { DeletePage } from '../pages/delete/delete';
+import { Fire } from '../util/fire';
 
 @Component({
   templateUrl: 'app.html'
@@ -12,7 +14,7 @@ import { DeletePage } from '../pages/delete/delete';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = Page1;
+  rootPage: any = LoginPage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -43,3 +45,5 @@ export class MyApp {
     this.nav.setRoot(page.component);
   }
 }
+
+ionicBootstrap(MyApp, [Fire]);
